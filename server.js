@@ -13,10 +13,24 @@
 
 import http from 'http';
 const port=8000;
-const name="Rency Boreh"
+// const name="Jerop"
 const server=http.createServer((req,res)=>{
-  res.setHeader('Content-Type','text/html');
-  res.end(`<h1 style='text-align:center;'>Hello My name is ${name} and This is my server Running at Port ${port}.</h1>`);
+  if (req.url==='/') {
+    res.writeHead(200,{'Content-Type':'text/html'});
+    res.end(`<h1 style='text-align:center;'>Home Page.</h1>`);
+  }
+  else if (req.url==='/about') {
+    res.writeHead(200,{'Content-Type':'text/html'});
+  res.end(`<h1 style='text-align:center;'>Hello this is About Page.</h1>`);
+  }
+  else{
+    res.writeHead(404,{'Content-Type':'text/html'});
+    res.end(`<h1 style='text-align:center;'>Page Not Found.</h1>`);
+  }
+ 
+ 
+  
+  
 });
 server.listen(port,()=>{
   console.log(`Server is running at port:${port}`);

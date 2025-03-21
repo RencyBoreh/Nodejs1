@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
-    
-
+    "start": "nodemon server.js"
   },
   "author": "Rency Boreh",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
